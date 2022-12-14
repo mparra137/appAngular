@@ -1,6 +1,7 @@
 
 
 #ANGULAR
+	
 	Baseado no Node
 
 	Termos:
@@ -15,7 +16,9 @@
 	 
 			
 #ANGULAR CLI
+	
 	##Atualizar
+		
 		npm uninstall -g @angular/cli
 		
 		npm install -g @angular/cli
@@ -40,12 +43,14 @@
 		Este comando (obtido no curso de Full Stack .Net Core com Angular) também faz a atualização do Angular no projeto. 
 
 #Extensão Visual Studio Code
+
 	Live Server
 		- Permite atualizar em tempo real as alterações de código feitas, sem precisar clicar em atualizar no browser
 	
 
 
 #CRIAR NOVO PROJETO
+
 ##Comando
 	ng new app1
 	ng new "nome do projeto"
@@ -54,6 +59,7 @@
 	Obs: É importante que o caminho para a pasta não tenha espaços e caracteres especiais
 	
 #Gerando módulo de roteamento:
+
 	ng generate module app-routing --flat --module=app
 	
 	Esse comando gera o módulo de roteamento separadamente do módulo principal, e atualiza a dependencia no modulo principal
@@ -63,6 +69,7 @@
 	--module=app	Tells ng generate to register it in the imports array of the AppModule.
 	
 #Servir como pagina web/ Sobe um servidor de dev
+
 	Posicionar o prompt na pasta onde estiver a aplicação criada.
 	Executar o comando:
 	ng serve		
@@ -88,6 +95,7 @@
 	O angular irá criar uma url local para testar a aplicação
 	
 #Estrutura de uma aplicação ANGULAR
+
 	- Utilizar um IDE: VS Code por exemplo
 
 	Package.json
@@ -115,6 +123,7 @@
 	É o arquivo inicial, onde está definido o módulo inicial que será carregado na aplicação
 	
 #Compenente 
+
 	Criando manualmente:
 	- Deve ser criado numa pasta separada para cada componente.
 	- Deve obrigatoriamente ter o arquivo component.ts e o component.html (template) 
@@ -137,13 +146,9 @@
 			app é o nome do modulo 
 			Assim ele inclui as referencias do component no arquivo app.module (nos meus projetos, isso tem acontecido automaticamente sem a flag --module)
 																			   (Provavelmente isso será util quando tivermos varios módulos)
-																			   
-																			   
-		
-		
-	
 
 #Template
+
 	- O template é o decorator que define qual o arquivo html do componente (render da view)
 	- definido no arquivo ts do component pelo decorator "templateUrl: './topo.component.html'"
 	@Component({
@@ -154,6 +159,7 @@
 	É possível definir in-line, utilizando o decorator "template"
 	
 #Component selector
+
 	- Define o seletor que deve ser usado no local onde deve ser renderizado o component.
 	- Temos alguns opções
 
@@ -183,7 +189,8 @@
 			Neste caso, tomar cuidado com a existencia de classes com o mesmo nome. Causa erro e não funciona.
 			
 #Data Binding
-	Property Binding -> [property]="data"
+
+	##Property Binding -> [property]="data"
 		- O template faz o "bind" do atributo html ao valor configurado na classe do componente.
 			No template:
 			<img [src]="variavelDaClasse"></img>
@@ -204,13 +211,9 @@
 					<img [src] = "variavelDaClasse">
 					<img src = "{{variavelDaClasse}}">  // Esta é valida, pois o src não está setado como se fosse obter valor de uma property, e a String Interpolation trará o valor setado na classe do componente
 					
-					
-			
-			
-			
+
+	##String Interpolation -> {{data}}
 	
-	
-	#String Interpolation -> {{data}}
 		- Na classe do component (arquivo ts):
 			public titulo: string = 'texto';
 		- No template (html)
@@ -220,7 +223,8 @@
 	
 	
 	
-	#Event Binding -> (event) = "expression"
+	##Event Binding -> (event) = "expression"
+	
 		- Do template html para a classe do componente
 		- O angular adiciona um event listener no elemento 
 		- Associado a um elemento html especifico
@@ -252,6 +256,8 @@
 
 			Se a variavel que for alterada no Event Binding estiver em tela, usando string Interpolation, a alteração se dá em tempo real do evento para a tela.
 			
+	#Input		
+	
 	@Input()
 		- Importado do core do angular
 		- Enviar o valor de um atributo de um componente para outro componente.
@@ -279,7 +285,8 @@
 						
 						@Input('propertyName') public varFilho: number = 0;
 						
-						
+	#Output
+	
 	@Output
 		Decorador @Output usado para que componentes possam emitir eventos para componentes pais (acima)
 		Através da classe EventEmmiter, um component filho pode emitir um valor a um component pai (aquele que faz referencia ao filho no template:
@@ -335,6 +342,7 @@
 			}
 			
 #Diretivas do Angular
+
 	ngIf
 		- renderiza a div caso a condição seja verdadeira
 		<div *ngIf=" valor == true; else divElsecom_ng-template">
@@ -358,6 +366,7 @@
 	ngPluralCase
 						
 #Ciclo de vida do Componente (aula 120) / Lifecycle Hooks
+
 	- Uma variavel @Input pode não ser inicializada no construtor da classe, pois devido ao ciclo de vida, o construtor ocorre antes da variavel input receber seu valor.
 	- Função ngOnInit()
 		- Variaveis input são inicializadas no inicializar do component, ou no ngOnInit()
@@ -379,6 +388,7 @@
 		 
 
 #Estilos/Css
+
 	- Pode ser definido in-line
 	- É mais interessante utilizar um arquivo component.css
 	- styleUrls: ['./topo/topo.component.css', 'site.css'...]
@@ -386,7 +396,8 @@
 
 
 #Bootstrap
-	para instalar o bootstrap para dentro da aplicação executar o npm
+
+	Para instalar o bootstrap para dentro da aplicação executar o npm
 	- npm install bootstrap
 		Assim será instalado a ultima versão do bootstrap para dentro da aplicação
 		
@@ -406,6 +417,7 @@
 									[caso seja necessário informar a versão]
 	
 #Jquery
+
 	Na pasta da aplicação:
 	npm install jquery --save
 	
@@ -415,18 +427,22 @@
 	Para que seja de uso global da aplicação (estará referenciado em todas os componentes	
 
 #Tether
+
+	Popper 
+		Nas versões mais atuais, o tether foi trocado pelo popper
+
 	npm install tether --save
 		scripts:["node_modules/tether/dist/js/tether.min.js"]
 	do arquivo de configuração angular.json	(antes do js do bootstrap)
 	Para que seja de uso global da aplicação (estará referenciado em todas os componentes	
 	
-	Popper 
-		Nas versões mais atuais, o tether foi trocado pelo popper
+	
 		
 		
 	
 	
 #Build
+
 	ng build -c development
 	ng build -c production
 	
@@ -436,6 +452,7 @@
 		development
 		
 #http-server
+
 	Pacote que serve uma pasta como um servidor http
 	npm install http-server -g
 	
@@ -446,10 +463,12 @@
 	<enter>
 	
 #Xampp / Apache
+
 	Distribuir e servir a aplicação neste método/servidor
 	Aula 132
 	
 #Amazon/Aws
+
 	Conta gratuita
 	
 	S3
@@ -457,12 +476,14 @@
 	Na sessão 12, aula 133, há instruções de como publicar na amazon.
 	
 	
-favicon
+#favicon
+
 	https://www.favicon-generator.org/
 	
 	Transforma qualquer imagem em ico, e disponibiliza o código html para inserir no código da página, com configurações para diferentes dispositivos
 	
 #Services
+
 	Um classe (normal) em arquivo do tipo typescript.
 	nome.service.ts
 	
@@ -529,6 +550,7 @@ favicon
 
 	
 #Json Server 
+
 	Auxilia em testes. 
 	Disponibiliza um server servindo um "Rest" - Um serviço retornando um arquivo json.
 	
@@ -541,6 +563,7 @@ favicon
 	
 	
 #Injectable
+
 	Decorator that marks a class as available to be provided and injected as a dependency.
 
 	@see — Introduction to Services and DI
@@ -561,6 +584,7 @@ favicon
 		precisa identificar em provider no componente, ou no provider do app.module.ts
 	
 #HTTP do Angular / Observable
+
 	Importar a dependência do HTTP para o app.module.ts
 	
 	import { HttpClient} from '@angular/commom/http'
@@ -594,6 +618,7 @@ favicon
 			//lastValueFrom = Converte Observable para Promise
 			
 #Routes / Rotas
+
 	Criar as rotas para os diferentes componentes dentro da aplicação
 	Criar arquivo:
 		app.routes.ts
@@ -799,6 +824,7 @@ favicon
 		];	
 			
 #Reative Programming
+
 	Orientada a mensagens
 	Elasticidade
 	Resiliente
@@ -829,6 +855,7 @@ favicon
 		
 
 ##Subject
+
 	proxy
 		Funciona como gateway para o Observable
 	Observavel e observador
@@ -943,6 +970,7 @@ favicon
 	</form>
 
 #Pipes
+
 	Determinar como a informação deve ser apresentada na View (em qual formato)
 	
 	| json
@@ -1075,6 +1103,7 @@ favicon
 			Do mesmo modo, deve ser informado ao app.module o novo Pipe na parte Declarations do app.module
 		
 #intl
+
 	Pacote de internacionalização para que os valores currency possam ser representados corretamente (com virgula dividindo os decimais)
 	
 		npm install --save intl (apontando para a pasta da aplicação)
@@ -1105,7 +1134,8 @@ favicon
 		
 	
 #Variaveis de referencia do template
-	#nomeDaVariavel
+
+	"#nomeDaVariavel"
 	Dentro do elemento html é possível setar uma variavel do elemento de template.
 	Exemplo:
 	<input type="search" class="form-control me-2" placeholder="Pesquise por ofertas" #termoDaPesquisa (keyup)="pesquisa(termoDaPesquisa.value)"/>
@@ -1116,6 +1146,7 @@ favicon
 		No evento do component, recebe-se seu valor como string
 		
 #Formularios NgForms
+
 	Iniciando:
 		- Declaração na classe de módulo
 		
@@ -1271,7 +1302,8 @@ favicon
 		
 		
 
-#ReactiveFormsModule		
+#ReactiveFormsModule	
+	
 	Iniciando:
 		- Declaração na classe de módulo
 		
@@ -1487,6 +1519,7 @@ favicon
 				
 				
 #Chamada de métodos dinamicamente (typescript)
+
 	Dentro de uma classe temos métodos que podem ser chamados para executar seus comandos, etc.
 	Geralmente a chamada se dá por
 		
@@ -1529,6 +1562,7 @@ favicon
 						"strict":false, (porém este modo afeta todos as outras checagens do typescript
 		
 #Animations
+
 	A biblioteca e animações do Angular está em @angular/platform-browser/animations:
 	
 	Deve ser importado para o módulo do app:
@@ -1636,6 +1670,7 @@ favicon
 	
 	
 #StrictTemplate
+
 	tsconfig.json
 	
 	Essas opções adicionam uma camada de checagem para a tipagem do typescript (checar se os tipos estão corretos dentro do template html).
@@ -1649,6 +1684,7 @@ favicon
 	}
 		
 #paths
+
 	A configuração paths dentro do arquivo tsconfig.json nos da a opção de encurtar os caminhos das referencias dos componentes/serviços/etc dentro dos componentes.
 	Ex:
 	
@@ -1664,14 +1700,17 @@ favicon
 
 		
 #Chrome Network
+
 	Na ferramenta de desenvolvedor do Google Chrome é possível verificar as requisições do Site na Aba Network e verificar os retornos
 	
 #Optional Chaining com Array
+
 	evento.lotes?.[0]?.nome
 
 #HttpParamsOptions
 
 #HostListener
+
 	https://angular.io/api/core/HostListener
 	
 	Cria um listener para executar um evento e uma função
@@ -1680,6 +1719,7 @@ favicon
 
 
 #Html
+
 	Atributo Pattern
 		Permite configurar uma regular expression para o campo html (input)
 		
@@ -1696,6 +1736,7 @@ crashlytics
 	
 	
 #To Base64
+
 	Angular 12
 	
 	import { Buffer} from 'buffer'
@@ -1708,6 +1749,7 @@ crashlytics
 	
 	
 #Firebase
+
 	293874923879
 	
 	firebase.google.com
@@ -1810,6 +1852,7 @@ crashlytics
 		
 	
 #ngx-bootstrap
+
 	npm install ngx-bootstrap --save
 	
 	collapse
@@ -1822,14 +1865,17 @@ crashlytics
 			
 			
 #ngx-toastr
+
 	Apresenta mensagens para responder a resultados de processamento
 	import { ToastrModule } from 'ngx-toastr';
 	
 #ngx-spinner
+
 	Imagem de carregando 	
 	import { NgxSpinnerModule } from 'ngx-spinner';
 	
 #ngx-datepicker
+
 	ngx-bootstrap/datepicker
 
 	import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'
@@ -1839,9 +1885,11 @@ crashlytics
 			
 	
 #font-awesome
+
 	npm install --save @fortawesome/fontawesome-free
 	
 #Converter uma string em int
+
 	basta colocar o sinal + na frente da variavel
 		+string
 		
