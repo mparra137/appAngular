@@ -24,13 +24,13 @@
 		npm install -g @angular/cli
 		
 		
-		Criar nova aplicação:
+		*Criar nova aplicação:
 			ng new app2.1
 			
 		
-		Após instalar a nova versão:
+		*Após instalar a nova versão:
 			1) Na nova aplicação
-			2) Verificar packege.json pelas dependencias
+			2) Verificar package.json pelas dependencias
 			3) Instalar dependencias via npm
 			3) Atualizar o arquivo angular.json (styles e scripts)
 			4) Copiar a pasta src da pasta da versão anterior para a atual.
@@ -38,20 +38,22 @@
 				Testar.
 				
 	##Atualizar Também
+	
 		ng update @angular/core @angular/cli
 		
 		Este comando (obtido no curso de Full Stack .Net Core com Angular) também faz a atualização do Angular no projeto. 
 
 #Extensão Visual Studio Code
 
-	Live Server
+	*Live Server
 		- Permite atualizar em tempo real as alterações de código feitas, sem precisar clicar em atualizar no browser
 	
 
 
 #CRIAR NOVO PROJETO
 
-##Comando
+	*Comando
+	
 	ng new app1
 	ng new "nome do projeto"
 	
