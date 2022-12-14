@@ -1,6 +1,8 @@
 # ANGULAR
 	
 	Baseado no Node
+  *Necessário instalar o Node.js*
+  
 
 	Termos:
 		Webpack
