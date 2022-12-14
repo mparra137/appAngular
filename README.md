@@ -14,17 +14,16 @@
 	 
 			
 ## ANGULAR CLI
-	
-	### Atualizar
+
+    O Angular/CLI (Command Language Interface) permite executar comandos via prompt de comando
+
+* Instalando o Angular/CLI
+    
+    npm install -g @angular/cli
 		
-		npm uninstall -g @angular/cli
-		
-		npm install -g @angular/cli
-		
-		
-		* Criar nova aplicação:
-			ng new app2.1
-			
+* Criar nova aplicação:
+
+    ng new app2.1			
 		
 		* Após instalar a nova versão:
 			1) Na nova aplicação
@@ -34,8 +33,14 @@
 			4) Copiar a pasta src da pasta da versão anterior para a atual.
 				Pronto!
 				Testar.
+        
+* Atualizar a versão do Angular no Projeto 
+		
+    npm uninstall -g @angular/cli
+		
+    npm install -g @angular/cli
 				
-	### Atualizar Também
+	  OU 
 	
 		ng update @angular/core @angular/cli
 		
@@ -43,7 +48,7 @@
 
 ## Extensão Visual Studio Code
 
-	*Live Server
+* Live Server
 		- Permite atualizar em tempo real as alterações de código feitas, sem precisar clicar em atualizar no browser
 	
 
@@ -122,7 +127,7 @@
 	main.ts
 	É o arquivo inicial, onde está definido o módulo inicial que será carregado na aplicação
 	
-## Compenente 
+## Componente 
 
 	Criando manualmente:
 	- Deve ser criado numa pasta separada para cada componente.
