@@ -1,5 +1,3 @@
-
-
 #ANGULAR
 	
 	Baseado no Node
