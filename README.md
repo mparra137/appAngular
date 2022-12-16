@@ -197,7 +197,7 @@
 			
 ## Data Binding
 
-	### Property Binding -> [property]="data"
+### Property Binding -> [property]="data"
 		- O template faz o "bind" do atributo html ao valor configurado na classe do componente.
 			No template:
 			<img [src]="variavelDaClasse"></img>
@@ -219,7 +219,7 @@
 					<img src = "{{variavelDaClasse}}">  // Esta é valida, pois o src não está setado como se fosse obter valor de uma property, e a String Interpolation trará o valor setado na classe do componente
 					
 
-	### String Interpolation -> {{data}}
+### String Interpolation -> {{data}}
 	
 		- Na classe do component (arquivo ts):
 			public titulo: string = 'texto';
@@ -230,7 +230,7 @@
 	
 	
 	
-	### Event Binding -> (event) = "expression"
+ ### Event Binding -> (event) = "expression"
 	
 		- Do template html para a classe do componente
 		- O angular adiciona um event listener no elemento 
@@ -263,7 +263,7 @@
 
 			Se a variavel que for alterada no Event Binding estiver em tela, usando string Interpolation, a alteração se dá em tempo real do evento para a tela.
 			
-	## Input		
+## Input		
 	
 	@Input()
 		- Importado do core do angular
@@ -292,7 +292,7 @@
 						
 						@Input('propertyName') public varFilho: number = 0;
 						
-	## Output
+## Output
 	
 	@Output
 		Decorador @Output usado para que componentes possam emitir eventos para componentes pais (acima)
@@ -433,7 +433,8 @@
 	do arquivo de configuração angular.json	(antes do js do bootstrap)
 	Para que seja de uso global da aplicação (estará referenciado em todas os componentes	
 
-####Tether
+#### Popper
+  Tether era a opção no bootstrap antigo
 
 	Popper 
 		Nas versões mais atuais, o tether foi trocado pelo popper
@@ -443,9 +444,6 @@
 	do arquivo de configuração angular.json	(antes do js do bootstrap)
 	Para que seja de uso global da aplicação (estará referenciado em todas os componentes	
 	
-	
-		
-		
 	
 	
 ## Build
@@ -489,7 +487,7 @@
 	
 	Transforma qualquer imagem em ico, e disponibiliza o código html para inserir no código da página, com configurações para diferentes dispositivos
 	
-##Services
+## Services
 
 	Um classe (normal) em arquivo do tipo typescript.
 	nome.service.ts
