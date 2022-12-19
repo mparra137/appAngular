@@ -1,6 +1,6 @@
 # ANGULAR
 	
-	Baseado no Node
+	Baseado em Node
   *Necessário instalar o Node.js*
   
 
